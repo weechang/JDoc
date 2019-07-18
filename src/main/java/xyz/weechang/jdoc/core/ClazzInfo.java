@@ -7,11 +7,15 @@ package xyz.weechang.jdoc.core;
  */
 public class ClazzInfo {
 
+    /*** java 类 */
     private String clazz;
 
+    /*** 类名 */
     private String clzzName;
 
+    /*** 请求地址 */
     private String url;
 
+    /***  */
     private String info;
 }

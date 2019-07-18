@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JDoc Api</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.10.1/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="application/javascript" src="https://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>
+</head>
+<body onload="prettyPrint()">
+<div id="app">
+    <div class="jdoc-class-list">
+        <el-collapse v-model="activeNames" @change="handleChange" class="jdoc-class-item">
+            <el-collapse-item>
+                <template slot="title">
+                    <h2>UserController</h2> <span class="jdoc-class-title-sub">用户管理</span>
+                </template>
+                <div class="jdoc-method-item jdoc-method-get">
+                    <div>
+                        <el-button type="primary" size="small" class="jdoc-requst-method">GET</el-button> <span class="jdoc-requst-url">/user</span> <span>获取用户列表</span>
+                    </div>
+                    <div class="jdoc-method-content">
+                        <el-tabs v-model="activeName" @tab-click="handleClick">
+                            <el-tab-pane label="Api Model" name="api">
+                                <div class="jdoc-method-option">
+                                    <b>Request</b>
+                                </div>
+                                <el-table :data="requestData" stripe style="width: 50%">
+                                    <el-table-column prop="field" label="参数名"></el-table-column>
+                                    <el-table-column prop="type" label="类型"></el-table-column>
+                                    <el-table-column prop="required" label="必须"></el-table-column>
+                                    <el-table-column prop="note" label="描述"></el-table-column>
+                                </el-table>
+                                <div class="jdoc-method-option">
+                                    <b>Response</b>
+                                    <el-button type="text">Android Code</el-button> | <el-button type="text">IOS Code</el-button>
+                                </div>
+                                <pre class="prettyprint lang-json">
+{
+    "apiBaseUrl" : "https://www.baidu.com" // 基础路径
+}</pre>
+                            </el-tab-pane>
+                            <el-tab-pane label="Request Model" name="request">
+                            <div class="jdoc-method-option">
+                            <b>Request</b>
+                            </div>
+                            <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                            <el-form-item label="活动名称" prop="name">
+                            <el-input v-model="ruleForm.name"></el-input>
+                            </el-form-item>
+                            <el-form-item>
+                            <el-button type="primary" @click="submitForm('ruleForm')">Submit</el-button>
+                            <el-button @click="resetForm('ruleForm')">Reset</el-button>
+                            </el-form-item>
+                            </el-form>
+                            <div class="jdoc-method-option">
+                            <b>Response</b>
+                            </div>
+                            </el-tab-pane>
+                        </el-tabs>
+                    </div>
+                </div>
+                <div class="jdoc-method-item jdoc-method-post">
+                    <div>
+                        <el-button type="success" size="small" class="jdoc-requst-method">POST</el-button> <span class="jdoc-requst-url">/user</span> <span>添加用户</span>
+                    </div>
+                </div>
+                <div class="jdoc-method-item jdoc-method-put">
+                    <div>
+                        <el-button type="warning" size="small" class="jdoc-requst-method">PUT</el-button> <span class="jdoc-requst-url">/user</span> <span>修改用户</span>
+                    </div>
+                </div>
+                <div class="jdoc-method-item jdoc-method-delete">
+                    <div>
+                        <el-button type="danger" size="small" class="jdoc-requst-method">DELETE</el-button> <span class="jdoc-requst-url">/user</span> <span>删除用户</span>
+                    </div>
+                </div>
+                <div class="jdoc-method-item jdoc-method-deprecated">
+                    <div>
+                        <el-button type="info" size="small" class="jdoc-requst-method">GET</el-button> <span class="jdoc-requst-url">/user/list</span> <span>删除用户</span>
+                    </div>
+                </div>
+            </el-collapse-item>
+        </el-collapse>
+    </div>
+</div>
+</body>
+<script type="application/javascript" src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+<script type="application/javascript" src="https://unpkg.com/element-ui@2.10.1/lib/index.js"></script>
+<script type="application/javascript">
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                config: {},
+                activeNames: ['1'],
+                activeName: 'api',
+                requestData: [
+                    {
+                        "field": "userName",
+                        "type": "String",
+                        "required": "√",
+                        "note": "用户名",
+                    },
+                    {
+                        "field": "nickName",
+                        "type": "String",
+                        "required": "-",
+                        "note": "昵称",
+                    },
+                    {
+                        "field": "email",
+                        "type": "String",
+                        "required": "-",
+                        "note": "电子邮件",
+                    }
+                ],
+                ruleForm: {
+                    name: '',
+                    region: '',
+                    date1: '',
+                    date2: '',
+                    delivery: false,
+                    type: [],
+                    resource: '',
+                    desc: ''
+                },
+                rules: {
+                    name: [
+                        { required: true, message: '请输入活动名称', trigger: 'blur' },
+                        { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+                    ],
+                    region: [
+                        { required: true, message: '请选择活动区域', trigger: 'change' }
+                    ],
+                    date1: [
+                        { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
+                    ],
+                    date2: [
+                        { type: 'date', required: true, message: '请选择时间', trigger: 'change' }
+                    ],
+                    type: [
+                        { type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change' }
+                    ],
+                    resource: [
+                        { required: true, message: '请选择活动资源', trigger: 'change' }
+                    ],
+                    desc: [
+                        { required: true, message: '请填写活动形式', trigger: 'blur' }
+                    ]
+                }
+            }
+        },
+        methods: {
+            handleChange(val) {
+                console.log(val);
+            },
+            submitForm(formName) {
+                this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                        alert('submit!');
+                    } else {
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
+            },
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
+            }
+        }
+    });
+</script>
+</html>

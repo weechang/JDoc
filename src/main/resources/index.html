@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JDoc Api</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.10.1/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="application/javascript" src="https://cdn.bootcss.com/prettify/r298/prettify.min.js"></script>
+</head>
+<body onload="prettyPrint()">
+<div id="app">
+    <div class="jdoc-class-list">
+        <el-collapse class="jdoc-class-item">
+            <el-collapse-item>
+                <template slot="title">
+                    <h2>UserController</h2> <span class="jdoc-class-title-sub">用户管理</span>
+                </template>
+                <div class="jdoc-method-item jdoc-method-get">
+                    <div>
+                        <el-button type="primary" size="small" class="jdoc-requst-method" @click="showTrigger">GET</el-button>
+                        <span class="jdoc-requst-url">/user</span> <span>获取用户列表</span>
+                    </div>
+                    <div class="jdoc-method-content" v-show="show">
+                        <el-tabs v-model="activeName">
+                            <el-tab-pane label="Api Model" name="api">
+                                <div class="jdoc-method-option">
+                                    <b>Request</b>
+                                </div>
+                                <el-table :data="requestData" stripe style="width: 50%">
+                                    <el-table-column prop="field" label="参数名"></el-table-column>
+                                    <el-table-column prop="type" label="类型"></el-table-column>
+                                    <el-table-column label="必须">
+                                        <template slot-scope="scope">
+                                            <el-tag type="danger" v-if="scope.row.required"
+                                                    class="jdoc-field-api-required">√
+                                            </el-tag>
+                                            <el-tag type="info" v-else class="jdoc-field-api-required">-</el-tag>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column prop="note" label="描述"></el-table-column>
+                                </el-table>
+                                <div class="jdoc-method-option">
+                                    <b>Response</b>
+                                </div>
+                                <pre class="prettyprint lang-json">
+{
+    "apiBaseUrl" : "https://www.baidu.com" // 基础路径
+}</pre>
+                            </el-tab-pane>
+                        </el-tabs>
+                    </div>
+                </div>
+                <div class="jdoc-method-item jdoc-method-post">
+                    <div>
+                        <el-button type="success" size="small" class="jdoc-requst-method">POST</el-button>
+                        <span class="jdoc-requst-url">/user</span> <span>添加用户</span>
+                    </div>
+                </div>
+                <div class="jdoc-method-item jdoc-method-put">
+                    <div>
+                        <el-button type="warning" size="small" class="jdoc-requst-method">PUT</el-button>
+                        <span class="jdoc-requst-url">/user</span> <span>修改用户</span>
+                    </div>
+                </div>
+                <div class="jdoc-method-item jdoc-method-delete">
+                    <div>
+                        <el-button type="danger" size="small" class="jdoc-requst-method">DELETE</el-button>
+                        <span class="jdoc-requst-url">/user</span> <span>删除用户</span>
+                    </div>
+                </div>
+                <div class="jdoc-method-item jdoc-method-deprecated">
+                    <div>
+                        <el-button type="info" size="small" class="jdoc-requst-method">GET</el-button>
+                        <span class="jdoc-requst-url">/user/list</span> <span>删除用户</span>
+                    </div>
+                </div>
+            </el-collapse-item>
+        </el-collapse>
+    </div>
+</div>
+</body>
+<script type="application/javascript" src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+<script type="application/javascript" src="https://unpkg.com/element-ui@2.10.1/lib/index.js"></script>
+<script type="application/javascript">
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                config: {},
+                activeName: 'api',
+                requestData: [
+                    {
+                        "field": "userName",
+                        "type": "String",
+                        "required": true,
+                        "note": "用户名",
+                    },
+                    {
+                        "field": "nickName",
+                        "type": "String",
+                        "required": true,
+                        "note": "昵称",
+                    },
+                    {
+                        "field": "email",
+                        "type": "String",
+                        "required": false,
+                        "note": "电子邮件",
+                    }
+                ],
+                show: false,
+            }
+        },
+        methods: {
+            showTrigger() {
+                this.show = !this.show;
+            }
+        }
+    });
+</script>
+</html>

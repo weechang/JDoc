@@ -24,14 +24,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <reflections.version>0.9.11</reflections.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
-            <version>${reflections.version}</version>
+            <version>0.9.11</version>
         </dependency>
     </dependencies>
 </project>

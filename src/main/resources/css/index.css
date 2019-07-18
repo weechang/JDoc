@@ -1,0 +1,165 @@
+.jdoc-class-list {
+    padding: 30px;
+}
+
+.jdoc-class-item {
+    margin-top: 10px;
+}
+
+.jdoc-class-title-sub {
+    margin-left: 10px;
+}
+
+.jdoc-method-item {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.jdoc-method-get {
+    border-color: #409EFF;
+    background: #ECF5FF;
+}
+
+.jdoc-method-post {
+    border-color: #67C23A;
+    background: #F0F9EB;
+}
+
+.jdoc-method-put {
+    border-color: #E6A23C;
+    background: #FDF6EC;
+}
+
+.jdoc-method-delete {
+    border-color: #F56C6C;
+    background: #FEF0F0;
+}
+
+.jdoc-method-deprecated {
+    border-color: #909399;
+    background: #F4F4F5;
+}
+
+.jdoc-requst-method {
+    width: 79px;
+}
+
+.jdoc-requst-url {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.jdoc-method-deprecated .jdoc-requst-url {
+    text-decoration: line-through;
+}
+
+.jdoc-method-content {
+    padding: 20px;
+}
+
+.jdoc-method-option {
+    margin: 10px 0;
+}
+
+.jdoc-field-api-required {
+    width: 30px;
+}
+
+/* pretty 代码样式美化  */
+.prettyprint {
+    background:#1d1f21;
+    font-family:Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+    font-size:13px;
+    line-height:1.5;
+    border:1px solid #ccc;
+    padding:10px
+}
+.pln {
+    color:#ccc
+}
+@media screen {
+    .str {
+        color:#9c9
+    }
+    .kwd {
+        color:#c9c
+    }
+    .com {
+        color:#999
+    }
+    .typ {
+        color:#69c
+    }
+    .lit {
+        color:#f99157
+    }
+    .pun {
+        color:#ccc
+    }
+    .opn {
+        color:#ccc
+    }
+    .clo {
+        color:#ccc
+    }
+    .tag {
+        color:#f2777a
+    }
+    .atn {
+        color:#f99157
+    }
+    .atv {
+        color:#6cc
+    }
+    .dec {
+        color:#f99157
+    }
+    .var {
+        color:#f2777a
+    }
+    .fun {
+        color:#69c
+    }
+}
+@media print, projection {
+    .str {
+        color:#060
+    }
+    .kwd {
+        color:#006;
+        font-weight:700
+    }
+    .com {
+        color:#600;
+        font-style:italic
+    }
+    .typ {
+        color:#404;
+        font-weight:700
+    }
+    .lit {
+        color:#044
+    }
+    .clo, .opn, .pun {
+        color:#440
+    }
+    .tag {
+        color:#006;
+        font-weight:700
+    }
+    .atn {
+        color:#404
+    }
+    .atv {
+        color:#060
+    }
+}
+ol.linenums {
+    margin-top:0;
+    margin-bottom:0
+}
+pre {
+    overflow:auto
+}
