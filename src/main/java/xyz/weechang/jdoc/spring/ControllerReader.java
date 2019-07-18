@@ -1,7 +1,7 @@
 package xyz.weechang.jdoc.spring;
 
 import org.reflections.Reflections;
-import xyz.weechang.jdoc.core.ServletBean;
+import xyz.weechang.jdoc.core.ClazzInfo;
 
 import java.util.Map;
 import java.util.Set;
@@ -15,7 +15,7 @@ import java.util.Set;
  */
 public class ControllerReader {
 
-    public static Map<String, ServletBean> getController(String packageName)  {
+    public static Map<String, ClazzInfo> getController(String packageName)  {
         Reflections reflections = new Reflections(packageName);
         Class ctrClazz = null;
         Class restCtrClazz = null;

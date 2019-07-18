@@ -33,10 +33,5 @@
             <artifactId>reflections</artifactId>
             <version>${reflections.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.gitee.l0km</groupId>
-            <artifactId>javadocreader</artifactId>
-            <version>1.0.0</version>
-        </dependency>
     </dependencies>
 </project>

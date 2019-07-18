@@ -14,4 +14,10 @@ public class SpringConst {
 
     /*** RestController 类名 */
     public static final String REST_CONTROLLER_CLASS_NAME = "org.springframework.web.bind.annotation.RestController";
+
+    /*** RequestMapping 类名 */
+    public static final String REQUEST_MAPPING_CLASS_NAME = "org.springframework.web.bind.annotation.RequestMapping";
+
+    /*** GetMapping 类名 */
+    public static final String GET_MAPPING_CLASS_NAME = "org.springframework.web.bind.annotation.GetMapping";
 }

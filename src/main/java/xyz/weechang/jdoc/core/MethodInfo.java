@@ -5,5 +5,5 @@ package xyz.weechang.jdoc.core;
  * date 2019/7/17
  * time 18:28
  */
-public class MethodBean {
+public class MethodInfo {
 }

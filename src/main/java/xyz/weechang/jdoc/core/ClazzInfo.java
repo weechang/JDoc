@@ -5,7 +5,7 @@ package xyz.weechang.jdoc.core;
  * date 2019/7/17
  * time 18:07
  */
-public class ServletBean {
+public class ClazzInfo {
 
     private String clazz;
 
