@@ -33,11 +33,6 @@
             <version>0.9.11</version>
         </dependency>
         <dependency>
-            <artifactId>velocity</artifactId>
-            <groupId>org.apache.velocity</groupId>
-            <version>1.7</version>
-        </dependency>
-        <dependency>
             <groupId>com.ibeetl</groupId>
             <artifactId>beetl</artifactId>
             <version>3.0.7.RELEASE</version>
