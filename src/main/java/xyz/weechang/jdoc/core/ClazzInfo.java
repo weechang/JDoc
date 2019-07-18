@@ -13,9 +13,10 @@ public class ClazzInfo {
     /*** 类名 */
     private String clzzName;
 
+    /*** 类功能描述 */
+    private String clazzDesc;
+
     /*** 请求地址 */
     private String url;
 
-    /***  */
-    private String info;
 }

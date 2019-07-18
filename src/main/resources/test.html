@@ -17,7 +17,7 @@
                 </template>
                 <div class="jdoc-method-item jdoc-method-get">
                     <div>
-                        <el-button type="primary" size="small" class="jdoc-requst-method" @click="showTrigger">GET</el-button>
+                        <el-button type="primary" size="small" class="jdoc-requst-method" @click="showTrigger(show)">GET</el-button>
                         <span class="jdoc-requst-url">/user</span> <span>获取用户列表</span>
                     </div>
                     <div class="jdoc-method-content" v-show="show">
@@ -42,8 +42,7 @@
                                 <div class="jdoc-method-option">
                                     <b>Response</b>
                                 </div>
-                                <pre class="prettyprint lang-json">
-{
+                                <pre class="prettyprint lang-json">{
     "apiBaseUrl" : "https://www.baidu.com" // 基础路径
 }</pre>
                             </el-tab-pane>
@@ -86,7 +85,41 @@
         el: '#app',
         data: function () {
             return {
-                config: {},
+                controllers: [
+                    {
+                        clazzName: "userController",
+                        clazzDesc: "用户管理",
+                        methods: [
+                            {
+                                methodName: "/user",
+                                methodDesc: "获取用户列表",
+                                methodReqMethod: "GET",
+                                methodActiveName: 'api',
+                                methodShow: false,
+                                methodFields: [
+                                    {
+                                        fieldName: "username",
+                                        fieldType: "String",
+                                        fieldRequired: true,
+                                        fieldDesc: "用户名"
+                                    },
+                                    {
+                                        fieldName: "nickName",
+                                        fieldType: "String",
+                                        fieldRequired: false,
+                                        fieldDesc: "昵称"
+                                    },
+                                    {
+                                        fieldName: "email",
+                                        fieldType: "String",
+                                        fieldRequired: false,
+                                        fieldDesc: "电子邮箱"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
                 activeName: 'api',
                 requestData: [
                     {
@@ -112,8 +145,8 @@
             }
         },
         methods: {
-            showTrigger() {
-                this.show = !this.show;
+            showTrigger(show) {
+                this.show = !show;
             }
         }
     });
