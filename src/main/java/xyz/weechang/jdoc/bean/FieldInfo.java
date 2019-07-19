@@ -10,46 +10,46 @@ package xyz.weechang.jdoc.bean;
 public class FieldInfo {
 
     /*** 变量名 */
-    private String feildName;
+    private String fieldName;
 
     /*** 变量类型 */
-    private String feildType;
+    private String fieldType;
 
     /*** 变量描述 */
-    private String feildDesc;
+    private String fieldDesc;
 
     /*** 是否必填 */
-    private String feildRequerd;
+    private boolean fieldRequired;
 
-    public String getFeildName() {
-        return feildName;
+    public String getFieldName() {
+        return fieldName;
     }
 
-    public void setFeildName(String feildName) {
-        this.feildName = feildName;
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
     }
 
-    public String getFeildType() {
-        return feildType;
+    public String getFieldType() {
+        return fieldType;
     }
 
-    public void setFeildType(String feildType) {
-        this.feildType = feildType;
+    public void setFieldType(String fieldType) {
+        this.fieldType = fieldType;
     }
 
-    public String getFeildDesc() {
-        return feildDesc;
+    public String getFieldDesc() {
+        return fieldDesc;
     }
 
-    public void setFeildDesc(String feildDesc) {
-        this.feildDesc = feildDesc;
+    public void setFieldDesc(String fieldDesc) {
+        this.fieldDesc = fieldDesc;
     }
 
-    public String getFeildRequerd() {
-        return feildRequerd;
+    public boolean getFieldRequired() {
+        return fieldRequired;
     }
 
-    public void setFeildRequerd(String feildRequerd) {
-        this.feildRequerd = feildRequerd;
+    public void setFieldRequired(boolean fieldRequired) {
+        this.fieldRequired = fieldRequired;
     }
 }

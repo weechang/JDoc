@@ -1,6 +1,8 @@
 package xyz.weechang.jdoc.servlet;
 
+import xyz.weechang.jdoc.bean.ClassInfo;
 import xyz.weechang.jdoc.enums.RequestMethod;
+
 
 /**
  * Mapping 信息
@@ -11,17 +13,26 @@ import xyz.weechang.jdoc.enums.RequestMethod;
  */
 public class Mapping {
 
+    /*** 请求路径 */
     private String[] value;
 
+    /*** 请求方法 */
     private RequestMethod[] method;
 
+    /*** 请求参数 */
     private String[] params;
 
+    /*** 请求头 */
     private String[] headers;
 
+    /*** 请求类型 */
     private String[] consumes;
 
+    /*** 返回类型 */
     private String[] produces;
+
+    /*** 返回结果 */
+    private ClassInfo response;
 
     public String[] getValue() {
         return value;
@@ -69,5 +80,13 @@ public class Mapping {
 
     public void setProduces(String[] produces) {
         this.produces = produces;
+    }
+
+    public ClassInfo getResponse() {
+        return response;
+    }
+
+    public void setResponse(ClassInfo response) {
+        this.response = response;
     }
 }
