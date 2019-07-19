@@ -139,31 +139,6 @@ public class ExtClassDoc {
         this.classDoc = Preconditions.checkNotNull(classDoc, "classDoc is null");
     }
 
-//	private static String signature(Method method){
-//		return Joiner.on(", ").join(
-//				Iterables.transform(Lists.newArrayList(method.getParameterTypes()), new Function<Class<?>, String>() {
-//					@Override
-//					public String apply(Class<?> input) {
-//						return input.getName();
-//					}
-//				}));
-//	}
-//	private static String signature(MethodDocImpl method){
-//		return  method.signature().replaceAll("\\((.*)\\)", "$1");
-//	}
-//	public MethodDocImpl getMethodDoc(Method method) {
-//		if (null == method)
-//			return null;
-//		String paramTypes = signature(method);
-//		for (MethodDoc m : classDoc.methods()) {
-//			MethodDocImpl doc = (MethodDocImpl) m;
-//			if (!method.getName().equals(doc.name()))continue;
-//			String signature = signature(doc);
-//			if(paramTypes.equals(signature))
-//				return doc;
-//		}
-//		return null;
-//	}
     /**
      * 检查两个方法对象的签名是否匹配<br>
      * @param method
