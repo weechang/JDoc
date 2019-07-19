@@ -1,6 +1,7 @@
 package xyz.weechang.jdoc.spring;
 
 import org.reflections.Reflections;
+import xyz.weechang.jdoc.servlet.ServletInfo;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,5 +40,10 @@ public class SpringClassReader {
         if (controller != null) ctrlClazzMap.put(SpringConst.CONTROLLER_CLASS, reflections.getTypesAnnotatedWith(controller));
         if (restController != null) ctrlClazzMap.put(SpringConst.REST_CONTROLLER_CLASS, reflections.getTypesAnnotatedWith(restController));
         return ctrlClazzMap;
+    }
+
+    public static ServletInfo getServletInfo(Class controller) {
+        ServletInfo servletInfo = new ServletInfo();
+        return servletInfo;
     }
 }

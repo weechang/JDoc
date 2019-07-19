@@ -19,7 +19,7 @@ public class SpringMethodReader {
     /**
      * 获取controller 类里面的Mapping
      * @param controller controller类
-     * @return Mapping
+     * @return MappingInfo
      */
     public static Map<String, Set<Method>> getMapping(Class controller) {
         Class requestMapping = null;

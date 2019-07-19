@@ -1,17 +1,21 @@
 package xyz.weechang.jdoc.servlet;
 
 import xyz.weechang.jdoc.bean.ClassInfo;
+import xyz.weechang.jdoc.bean.MethodInfo;
 import xyz.weechang.jdoc.enums.RequestMethod;
 
 
 /**
- * Mapping 信息
+ * MappingInfo 信息
  *
  * @author zhangwei
  * date 2019/7/18
  * time 15:00
  */
-public class Mapping {
+public class MappingInfo {
+
+    /*** 方法信息 */
+    private MethodInfo methodInfo;
 
     /*** 请求路径 */
     private String[] value;
@@ -33,6 +37,14 @@ public class Mapping {
 
     /*** 返回结果 */
     private ClassInfo response;
+
+    public MethodInfo getMethodInfo() {
+        return methodInfo;
+    }
+
+    public void setMethodInfo(MethodInfo methodInfo) {
+        this.methodInfo = methodInfo;
+    }
 
     public String[] getValue() {
         return value;

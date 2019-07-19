@@ -9,13 +9,13 @@ import xyz.weechang.jdoc.bean.ClassInfo;
  * date 2019/7/19
  * time 0:08
  */
-public class Servlet {
+public class ServletInfo {
 
     /*** 基本类信息 */
     private ClassInfo classInfo;
 
     /*** mapping 信息 */
-    private Mapping mapping;
+    private MappingInfo mapping;
 
     public ClassInfo getClassInfo() {
         return classInfo;
@@ -25,11 +25,11 @@ public class Servlet {
         this.classInfo = classInfo;
     }
 
-    public Mapping getMapping() {
+    public MappingInfo getMapping() {
         return mapping;
     }
 
-    public void setMapping(Mapping mapping) {
+    public void setMapping(MappingInfo mapping) {
         this.mapping = mapping;
     }
 }

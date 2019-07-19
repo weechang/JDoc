@@ -1,6 +1,7 @@
 package xyz.weechang.jdoc.bean;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class ClassReader {
      * @return 类信息
      */
     public static ClassInfo readClassInfo(Class<?> clazz) {
-        return readClassInfo(clazz, true);
+        return readClassInfo(clazz, true, true);
     }
 
     /**
@@ -28,9 +29,10 @@ public class ClassReader {
      *
      * @param clazz class
      * @param readField 是否读取字段信息
+     * @param readMethod 是否读取方法信息
      * @return 类信息
      */
-    public static ClassInfo readClassInfo(Class<?> clazz, boolean readField) {
+    public static ClassInfo readClassInfo(Class<?> clazz, boolean readField, boolean readMethod) {
         ClassInfo classInfo = new ClassInfo();
         String className = clazz.getName();
         String classSimpleName = clazz.getSimpleName();
@@ -44,9 +46,19 @@ public class ClassReader {
             if (fields.length > 0) {
                 List<FieldInfo> fieldInfos = new ArrayList<FieldInfo>();
                 for (Field field : fields) {
-                    fieldInfos.add( FieldReader.readFiledInfo(field));
+                    fieldInfos.add(FieldReader.readFiledInfo(field));
                 }
                 classInfo.setFields(fieldInfos);
+            }
+        }
+        if (readMethod) {
+            Method[] methods = clazz.getMethods();
+            if (methods.length > 0) {
+                List<MethodInfo> methodInfos = new ArrayList<MethodInfo>();
+                for (Method method : methods) {
+                    methodInfos.add(MethodReader.methodRead(method));
+                }
+                classInfo.setMethodInfos(methodInfos);
             }
         }
         return classInfo;

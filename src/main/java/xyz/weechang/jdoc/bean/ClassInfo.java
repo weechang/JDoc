@@ -20,6 +20,9 @@ public class ClassInfo {
     /*** 类描述 */
     private String classDesc;
 
+    /*** 方法信息 */
+    private List<MethodInfo> methodInfos;
+
     /*** 字段 */
     private List<FieldInfo> fields;
 
@@ -45,6 +48,14 @@ public class ClassInfo {
 
     public void setClassDesc(String classDesc) {
         this.classDesc = classDesc;
+    }
+
+    public List<MethodInfo> getMethodInfos() {
+        return methodInfos;
+    }
+
+    public void setMethodInfos(List<MethodInfo> methodInfos) {
+        this.methodInfos = methodInfos;
     }
 
     public List<FieldInfo> getFields() {

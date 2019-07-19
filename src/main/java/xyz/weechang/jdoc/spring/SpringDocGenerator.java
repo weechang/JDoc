@@ -21,5 +21,12 @@ public class SpringDocGenerator {
         Map<String, Set<Class<?>>> controllerMap = SpringClassReader.getController(basePackage);
         Set<Class<?>> controllerSet = controllerMap.get(SpringConst.CONTROLLER_CLASS);
         Set<Class<?>> restControllerSet = controllerMap.get(SpringConst.REST_CONTROLLER_CLASS);
+        if(controllerSet != null && !controllerSet.isEmpty()) controllerDocGen(controllerSet);
+    }
+
+    private static void controllerDocGen(Set<Class<?>> controllers) {
+        for (Class<?> conrtroller : controllers) {
+
+        }
     }
 }
